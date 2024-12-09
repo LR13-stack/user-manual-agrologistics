@@ -1,11 +1,218 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Welcome from "../components/Welcome.astro";
+import Layout from "../layouts/Layout.astro";
+import uno from "../assets/1.png";
+import dos from "../assets/2.png";
+import tres from "../assets/3.png";
+import cuatro from "../assets/4.png";
+import cinco from "../assets/5.jpg";
 ---
 
 <Layout>
 	<Welcome />
+	<div class="flex p-4 h-screen">
+		<!-- Columna izquierda para la imagen -->
+		<div class="w-1/2 p-4">
+			<img
+				src={uno.src}
+				alt="Imagen del Dashboard"
+				class="w-full h-auto shadow-lg rounded-lg"
+			/>
+		</div>
+
+		<!-- Columna derecha para la descripción -->
+		<div class="w-1/2 p-20">
+			<h2 class="text-2xl font-bold mb-4">Puntos del Dashboard</h2>
+
+			<p class="mb-2">
+				<strong>1. Menú o Sidebar:</strong> Este es el lugar donde se encuentran
+				todos los mantenedores, que permiten navegar entre las diferentes
+				secciones del dashboard. En el sidebar puedes acceder a todas las
+				funcionalidades del sistema, facilitando el acceso a las herramientas
+				y reportes disponibles.
+			</p>
+
+			<p class="mb-2">
+				<strong>2. Icono de Filtro:</strong> El icono de filtro es utilizado
+				para realizar filtrados en los reportes gráficos. Permite aplicar
+				condiciones específicas para visualizar datos más detallados o ajustar
+				los parámetros de los gráficos presentados en el dashboard.
+			</p>
+		</div>
+	</div>
+
+	<div class="flex p-4 h-screen">
+		<!-- Columna izquierda para las imágenes -->
+		<div class="w-1/2 p-20">
+			<h2 class="text-2xl font-bold mb-4">
+				Puntos del Contenedor de Pedidos
+			</h2>
+
+			<p class="mb-4">
+				<strong>1. Sección de Filtros:</strong> Esta sección permite actualizar
+				la información de la tabla a través de varios filtros. Los filtros
+				disponibles incluyen un rango de fechas (desde - hasta), un selector
+				para elegir el proveedor y otro selector para elegir el almacén desde
+				el cual se gestionarán los pedidos. Estos filtros son esenciales
+				para visualizar los datos específicos y relevantes para el usuario.
+			</p>
+
+			<p class="mb-4">
+				<strong>2. Botón de Crear Pedido:</strong> Al hacer clic en este
+				botón, el usuario es redirigido a un formulario donde podrá registrar
+				todos los datos necesarios para crear un pedido de uno o más artículos.
+				Los artículos seleccionados se enviarán a un almacén específico,
+				y el inventario de ese almacén se actualizará automáticamente, facilitando
+				la gestión de compras y existencias.
+			</p>
+
+			<p class="mb-4">
+				<strong>3. Botón de Generar PDF Detallado:</strong> Al hacer clic
+				en este botón, se abre un modal de formulario con los mismos filtros
+				utilizados anteriormente. Además, el modal presenta un gráfico interactivo
+				que muestra la cantidad de pedidos realizados durante un periodo
+				específico. Este gráfico permite al usuario analizar las tendencias
+				de pedidos a lo largo del tiempo, complementando la información detallada
+				que se genera en el PDF.
+			</p>
+		</div>
+
+		<!-- Columna derecha para la descripción -->
+		<div class="w-1/2 p-4">
+			<img
+				src={dos.src}
+				alt="Contenedor de Pedidos"
+				class="w-full h-auto shadow-lg rounded-lg mb-4"
+			/>
+		</div>
+	</div>
+
+	<div class="flex p-4 h-screen">
+		<!-- Columna izquierda para la imagen -->
+		<div class="w-1/2 p-4">
+			<img
+				src={tres.src}
+				alt="Imagen del Dashboard"
+				class="w-full h-auto shadow-lg rounded-lg"
+			/>
+		</div>
+
+		<!-- Columna derecha para la descripción -->
+		<div class="w-1/2 p-20">
+			<h2 class="text-2xl font-bold mb-4">
+				Interacción con la tabla de Pedidos
+			</h2>
+
+			<p class="mb-4">
+				<strong>1. Selección de Filas:</strong> Puedes seleccionar desde
+				10 filas hasta el total de las filas que contiene la tabla. Esto
+				te permitirá personalizar qué datos incluir en el reporte. Una vez
+				seleccionadas las filas, podrás generar un PDF o un archivo Excel
+				con solo esos datos seleccionados.
+			</p>
+
+			<p class="mb-4">
+				<strong>2. Botón Exportar a PDF:</strong> Al hacer clic en este botón,
+				se generará un reporte en formato PDF solo con los datos de las filas
+				seleccionadas. Esto es útil para generar informes personalizados
+				con la información específica que has seleccionado.
+			</p>
+
+			<p class="mb-4">
+				<strong>3. Botón Exportar a Excel:</strong> Este botón exporta los
+				datos de las filas seleccionadas en formato Excel. Al igual que con
+				el PDF, solo se exportan las filas que han sido previamente seleccionadas,
+				lo que permite una exportación más precisa y ajustada a las necesidades
+				del usuario.
+			</p>
+		</div>
+	</div>
+
+	<div class="flex p-4 h-screen">
+		<!-- Columna izquierda para las imágenes -->
+		<div class="w-1/2 p-20">
+			<h2 class="text-2xl font-bold mb-4">
+				Exportar PDF de Pedidos Detallados
+			</h2>
+
+			<p class="mb-4">
+				<strong>1. Rangos de Fechas:</strong> El usuario puede seleccionar
+				un rango de fechas personalizado para generar el reporte. Este filtro
+				de fechas permite definir el periodo exacto para el cual se desea
+				generar el informe, ya sea desde un inicio hasta un fin, lo que facilita
+				la obtención de datos específicos y relevantes para un análisis más
+				detallado.
+			</p>
+
+			<p class="mb-4">
+				<strong>2. Opciones Adicionales:</strong> Además del rango de fechas,
+				el reporte puede ser filtrado con opciones adicionales. El usuario
+				puede seleccionar el proveedor, el almacén, el tipo de documento
+				(factura, boleta o nota de crédito), así como la condición de pago,
+				que puede ser en efectivo o a crédito. Estas opciones permiten una
+				personalización más precisa del reporte, asegurando que se muestren
+				solo los datos necesarios según los criterios del usuario.
+			</p>
+
+			<p class="mb-4">
+				<strong>3. Gráfico Interactivo de Ventas:</strong> El reporte también
+				incluye un gráfico interactivo que muestra la cantidad de ventas
+				realizadas durante un año seleccionado. Este gráfico ofrece una representación
+				visual clara de las tendencias de ventas, lo que permite al usuario
+				realizar un análisis más efectivo y obtener insights sobre el comportamiento
+				de las ventas a lo largo del tiempo.
+			</p>
+		</div>
+
+		<!-- Columna derecha para la descripción -->
+		<div class="w-1/2 p-4">
+			<img
+				src={cuatro.src}
+				alt="Contenedor de Pedidos"
+				class="w-full h-auto shadow-lg rounded-lg mb-4"
+			/>
+		</div>
+	</div>
+
+	<div class="flex p-4 h-screen">
+		<!-- Columna izquierda para la imagen -->
+		<div class="w-1/2 p-4">
+			<img
+				src={cinco.src}
+				alt="Imagen del Dashboard"
+				class="w-full h-auto shadow-lg rounded-lg"
+			/>
+		</div>
+
+		<!-- Columna derecha para la descripción -->
+		<div class="w-1/2 p-20">
+			<h2 class="text-2xl font-bold mb-4">
+				Reporte PDF de Pedido Detallado
+			</h2>
+
+			<p class="mb-4">
+				El reporte de pedidos presentado en la imagen es un documento
+				generado por ALC Agrologistics que detalla las compras
+				realizadas entre el 01/12/2024 y el 09/12/2024. Incluye
+				información sobre los proveedores, almacenes, fechas de registro
+				e ingreso, condiciones de pago, valores de venta, exoneraciones,
+				subtotales, fletes y totales en soles (S/). El reporte está
+				dividido en tres secciones, cada una correspondiente a un
+				proveedor diferente: AgroPacha, AgroPerú S.A.C., y Cosecha
+				Peruana. Para cada proveedor, se listan los artículos comprados,
+				la cantidad de cada artículo y el importe en soles. Además, se
+				especifica el valor total de venta, el subtotal, el total del
+				flete y el total general para cada proveedor. Este reporte es
+				relevante porque proporciona una visión detallada de las compras
+				realizadas en un periodo específico, lo cual es útil para la
+				gestión de inventarios, el control de gastos y la planificación
+				financiera.
+			</p>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="mt-10 text-gray-500 text-center">
+		<p>&copy; 2024 Agrologistics Corporation. Todos los derechos reservados.</p>
+	</footer>
 </Layout>
